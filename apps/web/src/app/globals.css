@@ -130,7 +130,8 @@
     @apply border-border outline-ring/50;
     }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    overflow-x: hidden;
     }
   html {
     @apply scroll-smooth font-sans;
@@ -145,13 +146,20 @@
     @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8;
   }
   .shell {
-    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-10;
+    @apply mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-10;
   }
   .hero {
-    min-height: 610px;
+    min-height: clamp(34rem, 48vw, 40rem);
+  }
+  .section-space {
+    @apply py-10 sm:py-14 lg:py-16;
   }
 }
 
 @media (max-width: 767px) {
-  .hero { min-height: 690px; }
+  .hero { min-height: clamp(41rem, 178vw, 47rem); }
+}
+
+@media (max-width: 374px) {
+  .hero { min-height: 45rem; }
 }

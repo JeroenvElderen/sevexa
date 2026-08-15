@@ -107,21 +107,21 @@ const reviews = [
 
 function Logo() {
   return (
-    <a href="#" className="flex items-center gap-3" aria-label="SEVEXA home">
-      <span className="grid size-8 grid-cols-2 gap-0.5 rotate-45">
+    <a href="#" className="flex shrink-0 items-center gap-2.5 sm:gap-3" aria-label="SEVEXA home">
+      <span className="grid size-7 rotate-45 grid-cols-2 gap-0.5 sm:size-8">
         <i className="rounded-full bg-[#51207c]" />
         <i className="rounded-full bg-[#4b906d]" />
         <i className="rounded-full bg-[#4b906d]" />
         <i className="rounded-full bg-[#51207c]" />
       </span>
-      <b className="tracking-[.24em] text-[#171323]">SEVEXA</b>
+      <b className="text-sm tracking-[.2em] text-[#171323] sm:text-base sm:tracking-[.24em]">SEVEXA</b>
     </a>
   );
 }
 
 function Heading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-serif text-3xl leading-tight text-[#171323] md:text-4xl">
+    <h2 className="text-balance font-serif text-[clamp(1.75rem,4vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-[#171323]">
       {children}
     </h2>
   );
@@ -131,7 +131,7 @@ export default function Home() {
   return (
     <main className="bg-white text-[#171323]">
       <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur">
-        <div className="shell flex h-20 items-center justify-between">
+        <div className="shell flex h-16 items-center justify-between gap-4 sm:h-20">
           <Logo />
           <nav className="hidden items-center gap-9 text-sm font-medium lg:flex">
             <a href="#services">
@@ -145,47 +145,47 @@ export default function Home() {
             <a href="#pricing">Pricing</a>
             <a href="#help">Help</a>
           </nav>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             <button className="hidden rounded-xl border px-5 py-3 text-sm font-semibold sm:block">
               Log in
             </button>
-            <button className="rounded-xl bg-[#3e1266] px-5 py-3 text-sm font-semibold text-white">
+            <button className="hidden rounded-xl bg-[#3e1266] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#542080] sm:block">
               Get started <ArrowRight className="ml-1 inline size-4" />
             </button>
-            <button className="lg:hidden" aria-label="Menu">
+            <button className="grid size-10 place-items-center rounded-xl border border-black/10 lg:hidden" aria-label="Open navigation menu">
               <Menu />
             </button>
           </div>
         </div>
       </header>
 
-      <section className="shell pt-5">
+      <section className="shell pt-3 sm:pt-5">
         <div className="hero relative overflow-hidden rounded-[26px] bg-[#f4f1ef]">
           <Image
             src="https://images.unsplash.com/photo-1598301257982-0cf014dabbcd?auto=format&fit=crop&w=1600&q=90"
             alt="Woman relaxing at home while booking a service"
             fill
             priority
-            className="object-cover object-[70%_45%]"
+            className="object-cover object-[68%_45%] max-md:object-[72%_center]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f8f7f5] via-[#f8f7f5]/90 to-transparent" />
-          <div className="relative z-10 max-w-2xl px-8 py-16 md:px-14 md:py-20">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f8f7f5] via-[#f8f7f5]/90 to-transparent max-md:bg-gradient-to-b max-md:from-[#f8f7f5] max-md:from-45% max-md:via-[#f8f7f5]/90 max-md:via-70% max-md:to-[#f8f7f5]/25" />
+          <div className="relative z-10 max-w-2xl px-5 py-9 sm:px-8 sm:py-14 md:px-14 md:py-20">
             <span className="rounded-full bg-[#eee6f7] px-3 py-2 text-[11px] font-bold uppercase text-[#532185]">
               All services. One platform.
             </span>
-            <h1 className="mt-5 font-serif text-5xl leading-[.98] tracking-tight md:text-7xl">
+            <h1 className="mt-5 max-w-[11ch] text-balance font-serif text-[clamp(2.75rem,7vw,4.75rem)] leading-[.98] tracking-[-0.04em]">
               Whatever you need,
-              <br />
+              {" "}
               find it on <span className="text-[#622797]">SEVEXA.</span>
             </h1>
             <p className="mt-5 max-w-md text-base leading-7 text-black/65">
               Discover trusted, local pros and services for every part of your
               life.
             </p>
-            <div className="mt-8 flex max-w-xl items-center rounded-full bg-white p-2 shadow-xl">
+            <div className="mt-7 flex max-w-xl items-center rounded-2xl bg-white p-1.5 shadow-xl shadow-[#351052]/10 sm:mt-8 sm:rounded-full sm:p-2">
               <Search className="ml-3 size-5 text-[#542080]" />
               <input
-                className="min-w-0 flex-1 px-3 py-3 text-sm outline-none"
+                className="min-w-0 flex-1 bg-transparent px-2 py-3 text-sm outline-none sm:px-3"
                 placeholder="What service do you need?"
               />
               <span className="hidden items-center gap-1 rounded-full bg-[#fafafa] px-3 py-2 text-xs font-semibold sm:flex">
@@ -212,7 +212,7 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <div className="mt-12 flex gap-10 text-sm">
+            <div className="mt-9 flex gap-8 text-sm sm:mt-12 sm:gap-10">
               <div>
                 <b className="text-lg">50k+</b>
                 <p className="text-xs text-black/55">Happy customers</p>
@@ -252,7 +252,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="shell py-12">
+      <section id="services" className="shell section-space">
         <div className="text-center">
           <Heading>Explore services</Heading>
           <div className="mt-5 flex flex-wrap justify-center gap-3 text-sm">
@@ -273,12 +273,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-7 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {categories.map(([name, image]) => (
             <a
               href="#"
               key={name}
-              className="group relative h-32 overflow-hidden rounded-xl bg-[#f2f2f2]"
+              className="group relative h-32 overflow-hidden rounded-2xl bg-[#f2f2f2] sm:h-36 lg:h-32"
             >
               <Image
                 src={image}
@@ -287,7 +287,7 @@ export default function Home() {
                 className="object-cover transition group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/45 to-transparent" />
-              <b className="absolute left-5 top-5 font-serif text-lg">{name}</b>
+              <b className="absolute left-4 top-4 max-w-[9rem] font-serif text-base leading-tight sm:left-5 sm:top-5 sm:text-lg">{name}</b>
               <span className="absolute bottom-4 left-5 grid size-8 place-items-center rounded-full bg-white text-[#552183]">
                 <ArrowRight className="size-4" />
               </span>
@@ -295,7 +295,7 @@ export default function Home() {
           ))}
           <a
             href="#"
-            className="relative h-32 rounded-xl bg-[#f2f1f3] p-5 font-serif text-lg"
+            className="relative h-32 rounded-2xl bg-[#f2f1f3] p-4 font-serif text-base sm:h-36 sm:p-5 sm:text-lg lg:h-32"
           >
             More categories
             <span className="absolute bottom-4 left-5 grid size-8 place-items-center rounded-full bg-white text-[#552183]">
@@ -305,8 +305,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="shell pb-8">
-        <div className="mb-5 flex items-end justify-between">
+      <section className="shell section-space pt-0">
+        <div className="mb-5 flex items-end justify-between gap-4">
           <Heading>Popular services near you</Heading>
           <a className="text-xs font-bold text-[#542080]" href="#">
             View all →
@@ -316,7 +316,7 @@ export default function Home() {
           {services.map((s) => (
             <article
               key={s.name}
-              className="overflow-hidden rounded-xl border bg-white shadow-sm"
+              className="overflow-hidden rounded-2xl border bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative h-40">
                 <Image
@@ -348,13 +348,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how" className="shell py-8">
-        <div className="rounded-2xl bg-[#f6f4f8] p-7 text-center">
+      <section id="how" className="shell section-space pt-0">
+        <div className="rounded-3xl bg-[#f6f4f8] px-5 py-8 text-center sm:p-8 lg:p-10">
           <Heading>How SEVEXA works</Heading>
           <p className="mt-1 text-sm text-black/55">
             From request to results — it’s just a few simple steps.
           </p>
-          <div className="mt-7 grid gap-3 md:grid-cols-5">
+          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {[
               [Search, "Search", "Find the service you need"],
               [Send, "Request", "Share a few details"],
@@ -389,9 +389,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="everyone" className="shell grid gap-5 py-4 md:grid-cols-2">
-        <div className="rounded-2xl bg-gradient-to-r from-[#351052] to-[#63218b] p-8 text-white">
-          <div className="flex gap-5">
+      <section id="everyone" className="shell grid gap-5 pb-4 md:grid-cols-2">
+        <div className="rounded-3xl bg-gradient-to-r from-[#351052] to-[#63218b] p-6 text-white sm:p-8">
+          <div className="flex flex-col gap-5 sm:flex-row">
             <span className="grid size-14 place-items-center rounded-full bg-white/10">
               <HeartHandshake />
             </span>
@@ -406,8 +406,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="rounded-2xl bg-[#deebe3] p-8">
-          <div className="flex gap-5">
+        <div className="rounded-3xl bg-[#deebe3] p-6 sm:p-8">
+          <div className="flex flex-col gap-5 sm:flex-row">
             <span className="grid size-14 place-items-center rounded-full bg-white/40 text-[#377158]">
               <ShieldCheck />
             </span>
@@ -425,9 +425,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="shell py-8 text-center">
+      <section className="shell section-space text-center">
         <Heading>Why people choose SEVEXA</Heading>
-        <div className="mt-6 grid gap-4 text-left md:grid-cols-4">
+        <div className="mt-6 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
           {[
             [
               CircleUserRound,
@@ -471,14 +471,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="shell pb-8">
-        <div className="mb-5 flex justify-between">
+      <section className="shell section-space pt-0">
+        <div className="mb-5 flex items-end justify-between gap-4">
           <Heading>Real experiences</Heading>
           <a href="#" className="text-xs font-bold text-[#542080]">
             View all →
           </a>
         </div>
-        <div className="grid gap-4 md:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {reviews.map(([q, n, l]) => (
             <blockquote key={n} className="rounded-xl border p-5 text-sm">
               <p className="min-h-14">“{q}”</p>
@@ -494,14 +494,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="shell pb-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#371050] to-[#5e1d87] px-10 py-10 text-white">
+      <section className="shell pb-10 sm:pb-14">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#371050] to-[#5e1d87] px-6 py-9 text-white sm:px-10 sm:py-10">
           <div className="absolute right-20 top-0 hidden h-48 w-56 rotate-6 rounded-[35px] border-[10px] border-white bg-[#f7f3fa] md:block" />
-          <h2 className="font-serif text-4xl">Ready to SEVEXA it?</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl">Ready to SEVEXA it?</h2>
           <p className="mt-2 text-sm text-white/70">
             Join thousands who trust Sevexa.
           </p>
-          <div className="mt-6 flex gap-3">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <button className="rounded-lg bg-white px-6 py-3 text-xs font-bold text-[#431563]">
               Get started →
             </button>
@@ -513,8 +513,8 @@ export default function Home() {
       </section>
 
       <footer className="border-t">
-        <div className="shell grid gap-8 py-10 md:grid-cols-5">
-          <div>
+        <div className="shell grid grid-cols-2 gap-8 py-10 md:grid-cols-5">
+          <div className="col-span-2 md:col-span-1">
             <Logo />
             <p className="mt-4 text-xs leading-5 text-black/50">
               All the services you need.
@@ -552,7 +552,7 @@ export default function Home() {
               ))}
             </div>
           ))}
-          <div>
+          <div className="col-span-2 sm:col-span-1">
             <b className="text-sm">Stay updated</b>
             <p className="mt-3 text-xs text-black/50">
               Get tips, offers & more.

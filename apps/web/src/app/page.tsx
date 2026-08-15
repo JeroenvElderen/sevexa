@@ -51,6 +51,8 @@ const services = [
   },
 ] as const;
 
+const heroCardStyles = ["w-72 p-3.5", "ml-8 w-64 p-3", "ml-3 w-[17rem] p-3"] as const;
+
 const categories = [
   [
     "Cleaning",
@@ -159,24 +161,23 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="shell pt-3 sm:pt-5">
-        <div className="hero relative overflow-hidden rounded-[26px] bg-[#f4f1ef]">
+      <section>
+        <div className="hero relative w-full overflow-hidden bg-[#f4f1ef]">
           <Image
-            src="https://images.unsplash.com/photo-1598301257982-0cf014dabbcd?auto=format&fit=crop&w=1600&q=90"
+            src="https://images.unsplash.com/photo-1542596594-649edbc13630?auto=format&fit=crop&w=1600&q=90"
             alt="Woman relaxing at home while booking a service"
             fill
             priority
             className="object-cover object-[68%_45%] max-md:object-[72%_center]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#f8f7f5] via-[#f8f7f5]/90 to-transparent max-md:bg-gradient-to-b max-md:from-[#f8f7f5] max-md:from-45% max-md:via-[#f8f7f5]/90 max-md:via-70% max-md:to-[#f8f7f5]/25" />
-          <div className="relative z-10 max-w-2xl px-5 py-9 sm:px-8 sm:py-14 md:px-14 md:py-20">
+          <div className="relative z-10 mx-auto max-w-[1360px] px-5 py-9 sm:px-8 sm:py-14 md:px-14 md:py-20">
             <span className="rounded-full bg-[#eee6f7] px-3 py-2 text-[11px] font-bold uppercase text-[#532185]">
               All services. One platform.
             </span>
-            <h1 className="mt-5 max-w-[11ch] text-balance font-serif text-[clamp(2.75rem,7vw,4.75rem)] leading-[.98] tracking-[-0.04em]">
-              Whatever you need,
-              {" "}
-              find it on <span className="text-[#622797]">SEVEXA.</span>
+            <h1 className="mt-5 font-serif text-[clamp(2.5rem,4.5vw,3.75rem)] leading-[1.02] tracking-[-0.035em]">
+              <span className="block">Whatever you need,</span>
+              <span className="block">find it on <span className="text-[#622797]">SEVEXA.</span></span>
             </h1>
             <p className="mt-5 max-w-md text-base leading-7 text-black/65">
               Discover trusted, local pros and services for every part of your
@@ -223,11 +224,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="absolute right-6 top-12 hidden space-y-3 xl:block">
+          <div className="absolute right-6 top-10 hidden space-y-4 xl:block 2xl:right-[calc((100vw-1360px)/2+1.5rem)]">
             {services.slice(0, 3).map((s, i) => (
               <div
                 key={s.name}
-                className="flex w-64 items-center gap-3 rounded-2xl bg-white p-3 shadow-xl"
+                className={`flex items-center gap-3 rounded-2xl bg-white shadow-xl shadow-black/10 ${heroCardStyles[i]}`}
               >
                 <Image
                   src={s.image}

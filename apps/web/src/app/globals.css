@@ -133,6 +133,15 @@
     @apply bg-background text-foreground;
     }
   html {
-    @apply font-sans;
+    @apply scroll-smooth font-sans;
     }
+  button, a, summary {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
   }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8;
+  }
+}

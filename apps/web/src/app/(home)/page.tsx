@@ -120,92 +120,53 @@ export default function Home() {
     <main className="bg-white text-[#171323]">
       <SiteNavbar />
 
-      <section>
-        <div className="hero relative w-full overflow-hidden bg-[#f4f1ef]">
+      <section className="shell grid items-stretch gap-8 pb-8 pt-7 md:grid-cols-[.92fr_1.08fr] md:pt-9">
+        <div className="flex flex-col justify-center py-4 lg:pl-7">
+          <span className="w-fit rounded-full bg-[#eee6f7] px-3 py-1.5 text-[10px] font-bold uppercase text-[#532185]">
+            All services. One platform.
+          </span>
+          <h1 className="mt-4 font-serif text-[clamp(2.7rem,5vw,4.2rem)] leading-[1.02] tracking-[-.04em]">
+            Whatever you need,<br />
+            find it on <span className="text-[#622797]">SEVEXA.</span>
+          </h1>
+          <p className="mt-5 max-w-lg text-sm leading-6 text-black/65">
+            Discover trusted, local pros and services for every part of your life.
+          </p>
+          <div className="mt-7 flex max-w-xl items-center rounded-2xl border border-black/5 bg-white p-1.5 shadow-xl shadow-[#351052]/10 sm:rounded-full sm:p-2">
+            <Search className="ml-3 size-5 text-[#542080]" />
+            <input className="min-w-0 flex-1 bg-transparent px-2 py-3 text-sm outline-none sm:px-3" placeholder="What service do you need?" />
+            <span className="hidden items-center gap-1 rounded-full bg-[#fafafa] px-3 py-2 text-xs font-semibold sm:flex">
+              <MapPin className="size-4 text-[#542080]" /> Dallas, TX
+            </span>
+            <button className="ml-2 grid size-11 shrink-0 place-items-center rounded-full bg-[#4d1775] text-white" aria-label="Search">
+              <ArrowRight className="size-4" />
+            </button>
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px]">
+            <b>Popular right now:</b>
+            {["Cleaning", "Handyman", "Massage", "Lawn care", "Home repair"].map((item) => (
+              <span key={item} className="rounded-full bg-[#f6f3f8] px-3 py-1.5">{item}</span>
+            ))}
+          </div>
+          <div className="mt-8 flex gap-8 text-sm sm:gap-10">
+            <div><b className="text-lg">50k+</b><p className="text-xs text-black/55">Happy customers</p></div>
+            <div><b className="text-[#27784e]">★★★★★</b><p className="text-xs text-black/55">4.8 average rating</p></div>
+          </div>
+        </div>
+        <div className="relative min-h-80 overflow-hidden rounded-xl sm:min-h-[28rem]">
           <Image
             src="https://images.unsplash.com/photo-1542596594-649edbc13630?auto=format&fit=crop&w=1600&q=90"
             alt="Woman relaxing at home while booking a service"
             fill
             priority
-            className="object-cover object-[68%_45%] max-md:object-[72%_center]"
+            className="object-cover object-[68%_45%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f8f7f5] via-[#f8f7f5]/90 to-transparent max-md:bg-gradient-to-b max-md:from-[#f8f7f5] max-md:from-45% max-md:via-[#f8f7f5]/90 max-md:via-70% max-md:to-[#f8f7f5]/25" />
-          <div className="relative z-10 mx-auto max-w-[1360px] px-5 py-9 sm:px-8 sm:py-14 md:px-14 md:py-20">
-            <span className="rounded-full bg-[#eee6f7] px-3 py-2 text-[11px] font-bold uppercase text-[#532185]">
-              All services. One platform.
-            </span>
-            <h1 className="mt-5 font-serif text-[clamp(2.5rem,4.5vw,3.75rem)] leading-[1.02] tracking-[-0.035em]">
-              <span className="block">Whatever you need,</span>
-              <span className="block">find it on <span className="text-[#622797]">SEVEXA.</span></span>
-            </h1>
-            <p className="mt-5 max-w-md text-base leading-7 text-black/65">
-              Discover trusted, local pros and services for every part of your
-              life.
-            </p>
-            <div className="mt-7 flex max-w-xl items-center rounded-2xl bg-white p-1.5 shadow-xl shadow-[#351052]/10 sm:mt-8 sm:rounded-full sm:p-2">
-              <Search className="ml-3 size-5 text-[#542080]" />
-              <input
-                className="min-w-0 flex-1 bg-transparent px-2 py-3 text-sm outline-none sm:px-3"
-                placeholder="What service do you need?"
-              />
-              <span className="hidden items-center gap-1 rounded-full bg-[#fafafa] px-3 py-2 text-xs font-semibold sm:flex">
-                <MapPin className="size-4 text-[#542080]" /> Dallas, TX
-              </span>
-              <button
-                className="ml-2 grid size-11 shrink-0 place-items-center rounded-full bg-[#4d1775] text-white"
-                aria-label="Search"
-              >
-                <ArrowRight className="size-4" />
-              </button>
-            </div>
-            <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px]">
-              <b>Popular right now:</b>
-              {[
-                "Cleaning",
-                "Handyman",
-                "Massage",
-                "Lawn care",
-                "Home repair",
-              ].map((x) => (
-                <span key={x} className="rounded-full bg-white/70 px-3 py-1.5">
-                  {x}
-                </span>
-              ))}
-            </div>
-            <div className="mt-9 flex gap-8 text-sm sm:mt-12 sm:gap-10">
-              <div>
-                <b className="text-lg">50k+</b>
-                <p className="text-xs text-black/55">Happy customers</p>
-              </div>
-              <div>
-                <b className="text-[#27784e]">★★★★★</b>
-                <p className="text-xs text-black/55">4.8 average rating</p>
-              </div>
-            </div>
-          </div>
-          <div className="absolute right-6 top-10 hidden space-y-4 xl:block 2xl:right-[calc((100vw-1360px)/2+1.5rem)]">
-            {services.slice(0, 3).map((s, i) => (
-              <div
-                key={s.name}
-                className={`flex items-center gap-3 rounded-2xl bg-white shadow-xl shadow-black/10 ${heroCardStyles[i]}`}
-              >
-                <Image
-                  src={s.image}
-                  alt=""
-                  width={64}
-                  height={58}
-                  className="h-14 w-16 rounded-xl object-cover"
-                />
-                <div className="flex-1">
-                  <b className="text-sm">{s.name}</b>
-                  <p className="text-xs text-black/55">From {s.price}</p>
-                  <p className="mt-1 text-[10px] text-[#28794e]">
-                    ★ {s.rating}
-                  </p>
-                </div>
-                <span className="grid size-8 place-items-center rounded-full bg-[#4b906d] text-white">
-                  <ArrowRight className="size-3" />
-                </span>
+          <div className="absolute right-4 top-6 hidden space-y-3 sm:block">
+            {services.slice(0, 3).map((service, index) => (
+              <div key={service.name} className={`flex items-center gap-3 rounded-2xl bg-white shadow-xl shadow-black/10 ${heroCardStyles[index]}`}>
+                <Image src={service.image} alt="" width={64} height={58} className="h-14 w-16 rounded-xl object-cover" />
+                <div className="flex-1"><b className="text-sm">{service.name}</b><p className="text-xs text-black/55">From {service.price}</p><p className="mt-1 text-[10px] text-[#28794e]">★ {service.rating}</p></div>
+                <span className="grid size-8 place-items-center rounded-full bg-[#4b906d] text-white"><ArrowRight className="size-3" /></span>
               </div>
             ))}
           </div>

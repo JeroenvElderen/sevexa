@@ -148,6 +148,9 @@
   .shell {
     @apply mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-10;
   }
+  .category-shell {
+    @apply mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-12;
+  }
   .hero {
     min-height: clamp(34rem, 48vw, 40rem);
   }

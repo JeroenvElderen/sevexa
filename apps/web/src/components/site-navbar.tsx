@@ -39,6 +39,11 @@ const categories: Category[] = [
   { title: "More", icon: CircleEllipsis, services: ["Senior Care", "Health & Care", "Coaching", "And more"] },
 ];
 
+function getServiceHref(service: string) {
+  if (service === "Plumbing") return "/categories/plumbing";
+  return `/?service=${encodeURIComponent(service)}`;
+}
+
 export function Logo() {
   return (
     <Link href="/" className="flex shrink-0 items-center gap-2.5 sm:gap-3" aria-label="SEVEXA home">
@@ -68,7 +73,7 @@ function ExploreMenu({ close }: { close: () => void }) {
                     <span className="truncate text-[13px]">{title}</span>
                   </Link>
                   <ul className="space-y-2 pl-8 text-xs text-[#71667b]">
-                    {services.map((service) => <li key={service}><Link href={`/?service=${encodeURIComponent(service)}`} onClick={close} className="transition hover:text-[#51207c] hover:underline">{service}</Link></li>)}
+                    {services.map((service) => <li key={service}><Link href={getServiceHref(service)} onClick={close} className="transition hover:text-[#51207c] hover:underline">{service}</Link></li>)}
                     <li className="pt-1"><Link href="/#services" onClick={close} className="font-medium text-[#7a50a1]">View all</Link></li>
                   </ul>
                 </section>

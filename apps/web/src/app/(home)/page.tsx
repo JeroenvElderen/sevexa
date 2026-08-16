@@ -2,19 +2,19 @@ import Image from "next/image";
 import {
   ArrowRight,
   CalendarCheck,
-  Check,
   ChevronDown,
   CircleUserRound,
   Globe2,
   HeartHandshake,
   Leaf,
   MapPin,
-  Menu,
   Search,
   Send,
   ShieldCheck,
   Sparkles,
+  Check,
 } from "lucide-react";
+import { Logo, SiteNavbar } from "@/components/site-navbar";
 
 const services = [
   {
@@ -107,20 +107,6 @@ const reviews = [
   ],
 ] as const;
 
-function Logo() {
-  return (
-    <a href="#" className="flex shrink-0 items-center gap-2.5 sm:gap-3" aria-label="SEVEXA home">
-      <span className="grid size-7 rotate-45 grid-cols-2 gap-0.5 sm:size-8">
-        <i className="rounded-full bg-[#51207c]" />
-        <i className="rounded-full bg-[#4b906d]" />
-        <i className="rounded-full bg-[#4b906d]" />
-        <i className="rounded-full bg-[#51207c]" />
-      </span>
-      <b className="text-sm tracking-[.2em] text-[#171323] sm:text-base sm:tracking-[.24em]">SEVEXA</b>
-    </a>
-  );
-}
-
 function Heading({ children }: { children: React.ReactNode }) {
   return (
     <h2 className="text-balance font-serif text-[clamp(1.75rem,4vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-[#171323]">
@@ -132,34 +118,7 @@ function Heading({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <main className="bg-white text-[#171323]">
-      <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur">
-        <div className="shell flex h-16 items-center justify-between gap-4 sm:h-20">
-          <Logo />
-          <nav className="hidden items-center gap-9 text-sm font-medium lg:flex">
-            <a href="#services">
-              Explore <ChevronDown className="inline size-3" />
-            </a>
-            <a href="#how">How it works</a>
-            <a href="#everyone">
-              For everyone <ChevronDown className="inline size-3" />
-            </a>
-            <a href="#providers">Become a pro</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#help">Help</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <button className="hidden rounded-xl border px-5 py-3 text-sm font-semibold sm:block">
-              Log in
-            </button>
-            <button className="hidden rounded-xl bg-[#3e1266] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#542080] sm:block">
-              Get started <ArrowRight className="ml-1 inline size-4" />
-            </button>
-            <button className="grid size-10 place-items-center rounded-xl border border-black/10 lg:hidden" aria-label="Open navigation menu">
-              <Menu />
-            </button>
-          </div>
-        </div>
-      </header>
+      <SiteNavbar />
 
       <section>
         <div className="hero relative w-full overflow-hidden bg-[#f4f1ef]">

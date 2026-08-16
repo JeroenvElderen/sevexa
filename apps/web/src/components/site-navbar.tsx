@@ -15,7 +15,7 @@ export function Logo() {
   );
 }
 
-export function SiteNavbar({ active }: { active?: "how" }) {
+export function SiteNavbar({ active }: { active?: "how" | "everyone" }) {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur">
       <div className="shell flex h-16 items-center justify-between gap-4 sm:h-20">
@@ -23,7 +23,7 @@ export function SiteNavbar({ active }: { active?: "how" }) {
         <nav className="hidden items-center gap-9 text-sm font-medium lg:flex" aria-label="Main navigation">
           <Link href="/#services">Explore <ChevronDown className="inline size-3" /></Link>
           <Link href="/how-it-works" className={active === "how" ? "border-b-2 border-[#51207c] pb-2 text-[#51207c]" : ""}>How it works</Link>
-          <Link href="/#everyone">For everyone <ChevronDown className="inline size-3" /></Link>
+          <Link href="/for-everyone" className={active === "everyone" ? "border-b-2 border-[#51207c] pb-2 text-[#51207c]" : ""}>For everyone</Link>
           <Link href="/#pricing">Pricing</Link>
           <Link href="/#help">Help</Link>
         </nav>

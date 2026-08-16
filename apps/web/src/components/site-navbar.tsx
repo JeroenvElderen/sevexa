@@ -24,7 +24,6 @@ export function SiteNavbar({ active }: { active?: "how" }) {
           <Link href="/#services">Explore <ChevronDown className="inline size-3" /></Link>
           <Link href="/how-it-works" className={active === "how" ? "border-b-2 border-[#51207c] pb-2 text-[#51207c]" : ""}>How it works</Link>
           <Link href="/#everyone">For everyone <ChevronDown className="inline size-3" /></Link>
-          <Link href="/#providers">Become a pro</Link>
           <Link href="/#pricing">Pricing</Link>
           <Link href="/#help">Help</Link>
         </nav>

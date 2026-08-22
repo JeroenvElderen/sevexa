@@ -100,7 +100,7 @@ function ExploreMenu({ close }: { close: () => void }) {
   );
 }
 
-export function SiteNavbar({ active }: { active?: "how" | "everyone" }) {
+export function SiteNavbar({ active }: { active?: "how" | "everyone" | "pricing" }) {
   const [exploreOpen, setExploreOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
 
@@ -129,7 +129,7 @@ export function SiteNavbar({ active }: { active?: "how" | "everyone" }) {
           </button>
           <Link href="/how-it-works" className={active === "how" ? "border-b-2 border-[#51207c] pb-2 text-[#51207c]" : ""}>How it works</Link>
           <Link href="/for-everyone" className={active === "everyone" ? "border-b-2 border-[#51207c] pb-2 text-[#51207c]" : ""}>For everyone</Link>
-          <Link href="/#pricing">Pricing</Link>
+          <Link href="/pricing" className={active === "pricing" ? "border-b-2 border-[#51207c] pb-2 text-[#51207c]" : ""}>Pricing</Link>
           <Link href="/#help">Help</Link>
         </nav>
         <div className="flex items-center gap-2">
